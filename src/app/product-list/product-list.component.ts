@@ -49,19 +49,23 @@ export class ProductListComponent implements OnInit {
 
 export const PRODUCT_LIST: any = {
   "101": {
-    "productId": 101, "productName": "SamsungM30", "description": "Android Smartphone",
-    "price": 15000.0, "image": "assets/icons/cart.jpg"
+    "productId": 101, "productName": "OPPO F15", "description": "OPPO F15 (Lightening Black, 8GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers",
+    "price": 21990.00, "image": "assets/icons/oppoF15.jpg"
   },
   "102": {
-    "productId": 102, "productName": "SamsungM30", "description": "Android Smartphone",
-    "price": 15000.0, "image": "assets/icons/cart.jpg"
+    "productId": 102, "productName": "Samsung Galaxy M30s", "description": "Samsung Galaxy M30s (Opal Black, 4GB RAM, 64GB Storage)",
+    "price": 15999.00, "image": "assets/icons/SamsungM30.jpg"
   },
   "103": {
-    "productId": 103, "productName": "SamsungM30", "description": "Android Smartphone",
-    "price": 15000.0, "image": "assets/icons/cart.jpg"
+    "productId": 103, "productName": "Samsung Galaxy M40", "description": "Samsung Galaxy M40 (Midnight Blue, 6GB RAM, 128GB Storage)",
+    "price": 179999.00, "image": "assets/icons/SamsungM40.jpg"
   },
   "104": {
-    "productId": 104, "productName": "SamsungM30", "description": "Android Smartphone",
-    "price": 15000.0, "image": "assets/icons/cart.jpg"
+    "productId": 104, "productName": "Redmi K20 Pro", "description": "Redmi K20 Pro (Pearl White, 6GB RAM, 128GB Storage) - Extra 2,000 Off on Exchange &12 Month No Cost EMI",
+    "price": 26850.00, "image": "assets/icons/redmik20.jpg"
+  },
+  "105": {
+    "productId": 105, "productName": "Redmi Note 8", "description": "Redmi Note 8 (Neptune Blue, 6GB RAM, 128GB Storage)",
+    "price": 14999.00, "image": "assets/icons/RedmiNote8.jpg"
   }
 };
