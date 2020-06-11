@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'bazinga-ui'`, () => {
+  it(`should have as title 'BAZINGA'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('bazinga-ui');
+    expect(app.title).toEqual('BAZINGA');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('bazinga-ui app is running!');
+    expect(compiled.querySelector('#title').textContent).toContain('BAZINGA');
   });
 });
