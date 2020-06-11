@@ -5,18 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart/cart-service.component';
+import { AppService } from './app.service';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationService } from './notification/notification.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CartService, AppService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

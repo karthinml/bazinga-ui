@@ -15,3 +15,25 @@
     padding-right: 1%;
     cursor: pointer;
 }
+
+.cart-item-count {
+    color: white;
+    float: right;
+    font-size: 10px;
+    padding: 0px;
+    font-weight: 700;
+    margin-left: -12px;
+    background: #dd1515;
+    height: 15px;
+    text-align: center;
+    width: 15px;
+    border-radius: 10px;
+}
+
+.notification-bar {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 3em;
+}

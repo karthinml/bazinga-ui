@@ -4,7 +4,8 @@
             <img [src]="product.image" class="product-img"/>
             <label>{{product.productName}}</label><br>
             <label class="price">Rs. {{product.price}}</label><br>
-            <button class="btn-primary add-cart-btn">Add to Cart</button>
+            Quantity: <input (input)="product.quantity = $event.target.value" value="1" maxlength="1" min="1" type="number"/>
+            <button class="btn-primary add-cart-btn" (click)="addToCart(product)">Add to Cart</button>
         </div>
         
     </div>
