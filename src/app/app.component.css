@@ -5,12 +5,12 @@
     background: black;
     font-size: 24px;
     color: #fff;
-    padding: 2% 0% 2% 0%;
+    padding: 1% 1% 0% 1%;
 }
 
 .header-icon {
-    height: 2%;
-    width: 3%;
+    height: 4%;
+    width: 4%;
     float: right;
     padding-right: 1%;
     cursor: pointer;

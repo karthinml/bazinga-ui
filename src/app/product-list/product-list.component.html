@@ -1,1 +1,11 @@
-<p>product-list works!</p>
+<div class="row" style="margin: 2%;">
+    <div *ngFor="let product of productList" class="col-md-4 col-lg-4 col-sm-6 product">
+        <div class="product-detail">
+            <img [src]="product.image" class="product-img"/>
+            <label>{{product.productName}}</label><br>
+            <label class="price">Rs. {{product.price}}</label><br>
+            <button class="btn-primary add-cart-btn">Add to Cart</button>
+        </div>
+        
+    </div>
+</div>
