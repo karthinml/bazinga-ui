@@ -1,1 +1,19 @@
-<p>cart works!</p>
+<a [routerLink]="'/products'" style="margin-left: 2%;">Home</a>
+<div *ngIf="cartData.length" class="cart">
+    <div *ngFor="let product of cartData; let i=index;" class="row details">
+        <div class="col-md-2 col-lg-2 col-sm-3">
+            <img [src]="product.image" class="image-style"/><br>
+            {{product.productName}}
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-3 field-margin">{{product.description}}</div>
+        <div class="col-md-4 col-lg-4 col-sm-3 field-margin">
+            Quantity: <input [(ngModel)]="product.quantity" (change)="udpateQuantity(product, i)" maxlength="2" min="1" type="number" />
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-3 field-margin" style="font-weight: 700;">Rs. {{product.price}}</div>
+        <div class="col-md-1 col-lg-1 col-sm-3 field-margin">
+            <img src="assets/icons/delete.jpg" alt="Remove" class="delete-img" (click)="deleteProduct(product.productId, i)"/>
+        </div>
+    </div>
+</div>
+<div *ngIf="!cartData.length" [style.background-image]="'url(assets/icons/emptycart.png)'" class="empty-cart">
+</div>

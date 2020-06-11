@@ -21,11 +21,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
       this.message = data.message;
       let notificationType = data.type;
       if (this.isDefined(this.message)) {
-        if(notificationType == 'error') {
-          this.background = 'red';
-        } else {
-          this.background = 'green';
-        }
+        this.background = (notificationType == 'error') ? 'red' : 'green';
         this.messageNotification();
       }
     });
