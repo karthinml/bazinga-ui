@@ -30,15 +30,15 @@ export class CartService {
     }
 
     addProductToCart(request) {
-        return this.http.post<any>(SERVICE_BASE_URL+'/cart', request, { responseType: 'text' as 'json'});
+        return this.http.post<any>(SERVICE_BASE_URL+'/cart', request);
     }
 
     updateProductQuantity(request) {
-        return this.http.put<any>(SERVICE_BASE_URL+'/cart', request, { responseType: 'text' as 'json'});
+        return this.http.put<any>(SERVICE_BASE_URL+'/cart', request);
     }
 
     deleteProductFromCart(productId) {
-      return this.http.delete<any>(SERVICE_BASE_URL+'/cart/'+this.userId+'/'+productId, { responseType: 'text' as 'json'});
+      return this.http.delete<any>(SERVICE_BASE_URL+'/cart/'+this.userId+'/'+productId);
     }
 
     addedProductToCart(product) {

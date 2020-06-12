@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
     this.appService.enableLoading();
     this.cartservice.addProductToCart(cartRequest).subscribe((result: any) => {
       this.appService.disableLoading();
-      this.notificationService.notify(result, "success");
+      this.notificationService.notify(result['message'], "success");
       this.cartservice.addedProductToCart(cartRequest);
     }, error => {
       this.appService.disableLoading();

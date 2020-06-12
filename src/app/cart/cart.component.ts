@@ -47,7 +47,7 @@ export class CartComponent implements OnInit, OnDestroy {
     this.appService.enableLoading();
     this.cartService.updateProductQuantity(product).subscribe((result: any) => {
       this.appService.disableLoading();
-      this.notificationService.notify(result, "success");
+      this.notificationService.notify(result['message'], "success");
       this.cartService.getCartData()[index] = product;
     }, error => {
       this.appService.disableLoading();
@@ -59,7 +59,7 @@ export class CartComponent implements OnInit, OnDestroy {
     this.appService.enableLoading();
     this.cartService.deleteProductFromCart(productId).subscribe((result: any) => {
       this.appService.disableLoading();
-      this.notificationService.notify(result, "success");
+      this.notificationService.notify(result['message'], "success");
       this.cartService.getCartData().splice(index, 1);
     }, error => {
       this.appService.disableLoading();
