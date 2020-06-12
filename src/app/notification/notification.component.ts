@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NotificationService } from './notification.service';
 import { Subscription } from 'rxjs';
+import { NOTIFICATION_DISPLAY_DURATION_IN_SECONDS } from '../app.constants';
 
 @Component({
   selector: 'app-notification',
@@ -42,7 +43,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
       this.message = '';
       this.background = 'none';
       this.height = '0em';
-    }, 5000);
+    }, NOTIFICATION_DISPLAY_DURATION_IN_SECONDS * 1000);
   }
 
 }
