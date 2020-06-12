@@ -14,9 +14,10 @@ export class AppComponent implements OnInit, OnDestroy {
   cartDataChangeSubscription: Subscription;
   loadingSubscription: Subscription;
   cartData: any = [];
+  userName: string = '';
 
   constructor(private cartService: CartService, private appService: AppService) {
-
+    this.userName = this.appService.getUserDetails()['userName'];
   }
 
   ngOnInit() {

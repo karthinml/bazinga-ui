@@ -41,7 +41,7 @@ export class ProductListComponent implements OnInit {
       this.cartservice.addedProductToCart(cartRequest);
     }, error => {
       this.appService.disableLoading();
-      this.notificationService.notify(error['error'], "error");
+      this.appService.appErrorHandler(error);
     });
   }
 

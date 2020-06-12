@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { AppService } from '../app.service';
 import { SERVICE_BASE_URL } from '../app.constants';
-import { map } from "rxjs/operators";  
 import { Subject, Observable } from 'rxjs';
 import { PRODUCT_LIST } from '../product-list/product-list.component';
 

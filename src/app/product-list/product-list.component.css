@@ -33,3 +33,10 @@
 .price {
     font-weight: 700;
 }
+
+.quantity-input {
+    display: initial !important;
+    width: 25% !important;
+    height: 27px !important;
+    margin-right: 2% !important;
+}

@@ -40,6 +40,10 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   udpateQuantity(product, index) {
+    if(product.quantity < 1) {
+      this.notificationService.notify("Please enter valid quantity!", "error");
+      return;
+    }
     this.appService.enableLoading();
     this.cartService.updateProductQuantity(product).subscribe((result: any) => {
       this.appService.disableLoading();
@@ -47,7 +51,7 @@ export class CartComponent implements OnInit, OnDestroy {
       this.cartService.getCartData()[index] = product;
     }, error => {
       this.appService.disableLoading();
-      this.notificationService.notify(error['error'], "error");
+      this.appService.appErrorHandler(error);
     });
   }
 
@@ -59,7 +63,7 @@ export class CartComponent implements OnInit, OnDestroy {
       this.cartService.getCartData().splice(index, 1);
     }, error => {
       this.appService.disableLoading();
-      this.notificationService.notify(error['error'], "error");
+      this.appService.appErrorHandler(error);
     });
   }
 }

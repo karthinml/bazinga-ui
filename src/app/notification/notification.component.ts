@@ -11,6 +11,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
   message: string;
   background: string = 'none';
+  height: string = '0em';
   notificationSubscription: Subscription;
 
   constructor(private notificationService: NotificationService) {
@@ -22,6 +23,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
       let notificationType = data.type;
       if (this.isDefined(this.message)) {
         this.background = (notificationType == 'error') ? 'red' : 'green';
+        this.height = '3em';
         this.messageNotification();
       }
     });
@@ -39,6 +41,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.message = '';
       this.background = 'none';
+      this.height = '0em';
     }, 5000);
   }
 

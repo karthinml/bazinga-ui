@@ -4,7 +4,9 @@
             <img [src]="product.image" class="product-img"/>
             <label>{{product.productName}}</label><br>
             <label class="price">Rs. {{product.price}}</label><br>
-            Quantity: <input (input)="product.quantity = $event.target.value" value="1" maxlength="2" min="1" type="number"/>
+            Quantity: <input (input)="product.quantity = $event.target.value" 
+                        class="form-control quantity-input"
+                        value="1" maxlength="2" min="1" type="number"/>
             <button class="btn-primary add-cart-btn" (click)="addToCart(product)">Add to Cart</button>
         </div>
         
