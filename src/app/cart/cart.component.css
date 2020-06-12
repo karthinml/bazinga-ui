@@ -36,3 +36,9 @@
     margin-left: 10%;
     font-size: 14px;
 }
+
+.quantity-input {
+    display: initial !important;
+    width: 35% !important;
+    height: 30px !important;
+}
