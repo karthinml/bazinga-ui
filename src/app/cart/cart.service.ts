@@ -19,7 +19,7 @@ export class CartService {
     getProductsInCart() {
         return this.http.get<any>(SERVICE_BASE_URL+'/cart/'+this.userId).subscribe(
             response => { 
-              this.cartData = response;
+              this.cartData = response.cartItems != undefined ? response.cartItems : [];
               this.notifyCartDataUpdate.next(this.cartData);
               return response; 
             } ,
@@ -33,17 +33,17 @@ export class CartService {
         return this.http.post<any>(SERVICE_BASE_URL+'/cart', request);
     }
 
-    updateProductQuantity(request) {
-        return this.http.put<any>(SERVICE_BASE_URL+'/cart', request);
+    updateProductQuantity(item) {
+        return this.http.put<any>(SERVICE_BASE_URL+'/item/'+item.itemId, {"quantity": item.quantity});
     }
 
-    deleteProductFromCart(productId) {
-      return this.http.delete<any>(SERVICE_BASE_URL+'/cart/'+this.userId+'/'+productId);
+    deleteProductFromCart(itemId) {
+      return this.http.delete<any>(SERVICE_BASE_URL+'/item/'+itemId);
     }
 
-    addedProductToCart(product) {
-      this.cartData.push(product);
-      this.notifyCartDataUpdate.next(this.cartData);
+    addedProductToCart(data) {
+      this.cartData = data;
+      this.notifyCartDataUpdate.next(data);
     }
 
     cardDataUpdateNotifier(): Observable<any> {

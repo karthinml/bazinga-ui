@@ -27,18 +27,20 @@ export class ProductListComponent implements OnInit {
 
   addToCart(product) {
     let cartRequest = {
-      "productId": product.productId,
-      "productName": product.productName,
-      "description": product.description,
-      "price": product.price,
-      "quantity": (product.quantity == undefined || product.quantity == 0) ? 1 : product.quantity,
+      "cartItem": {
+        "productId": product.productId,
+        "itemName": product.productName,
+        "itemDescription": product.description,
+        "itemPrice": product.price,
+        "itemQuantity": (product.quantity == undefined || product.quantity == 0) ? 1 : product.quantity
+      },
       "userId": this.userId
     }
     this.appService.enableLoading();
     this.cartservice.addProductToCart(cartRequest).subscribe((result: any) => {
       this.appService.disableLoading();
-      this.notificationService.notify(result['message'], "success");
-      this.cartservice.addedProductToCart(cartRequest);
+      this.notificationService.notify("Product added to cart successfully", "success");
+      this.cartservice.addedProductToCart(result.cartItems);
     }, error => {
       this.appService.disableLoading();
       this.appService.appErrorHandler(error);
